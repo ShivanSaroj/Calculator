@@ -1,0 +1,7 @@
+Employee ID:232434
+Employee Name     :Shivani Saroj
+Father's Name     :Ramesh Kumar
+Employee Contact  :5546576768
+Email Information :shivani123@gmail.com
+Employee position :4335
+Employee Salary   :535446

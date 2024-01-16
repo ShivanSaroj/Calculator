@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        /* background-image: url(https://c8.alamy.com/comp/DMY1XT/mathematics-background-DMY1XT.jpg); */
+        background-color: rgb(154, 215, 239);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+        table{
+            border: 7px ridge black;
+            
+            margin: 10px;
+            background-color: black;
+            background-color: bisque;
+            color: white;
+            font-weight: bolder;
+        }
+        button{
+            color: white;
+            font-size: larger;
+        }
+        tr{
+            border: none;
+            background-color: orange;
+
+        }
+        th{
+            border: none;
+            color: white;
+            font-weight: bolder;
+            border-radius: 15px;
+            background-color: gray;
+        }
+        #a{
+            background-color: orange;
+
+        }
+       
+        button:hover{
+
+            height: 20px;
+            width: 50px;
+            text-align: center;
+            /* font-size: 15px; */
+            font-size: 17px;
+            font-weight: bolder;
+        }
+    
+        #ac,#DEL{
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body><center><h1 style="font-weight: bolder; color: darkred;font-size: 50px;">Calculator</h1>
+    <table name="table" style="width: 300px; height: 550px">
+        <tr style="width: 200px; height: 70px; background-color: wheat; border: 2px solid orange;"><td  style=" width: 270px;margin: 5px 5px 15px 5px; height: 150px; position: absolute; background-color: grey; border: 2px ridge black; border-radius: 10px;"><input class="display-box" id="result" disabled style="width: 270px; height: 150px; border-radius: 10px;"></td>
+       </tr>
+
+
+        <tr style="width: 200px; height: 20px; "><th style="width: 50px ;margin: 10px; background-color: darkred;"><button onclick="clrscreen()" id="ac" value="ac" style="background-color: darkred; border: none;">AC</button></th>
+        <th style="width: 40px; margin: 20px;"><button onclick="display('&&')" id="&&" value="&&" style="background-color: grey; border: none;">&&</button></th>
+        <th style="width: 40px; margin: 20px;"><button id="%" value="%" onclick="abc()" style="background-color: grey; border: none;">%</button></th>
+        <th style="width: 40px;margin: 20px; background-color: orange;"><button id="/" value="/" onclick="abc()" style="background-color: orange; border: none;">/</button></th></tr>
+
+
+        <tr style="width: 200px; height: 20px;"><th style="width: 50px;"><button id="7" value="7" onclick=" display('7')" style="background-color: grey; border: none;">7</button></th>
+        <th style="width: 50px;"><button id="8" value="8" onclick="display('8')" style="background-color: grey; border: none;">8</button></th>
+        <th style="width: 50px;"><button id="9" value="9" onclick="display('9')" style="background-color: grey; border: none;">9</button></th>
+        <th style="width: 50px; background-color: orange; "><button id="*" value="*" onclick="display('*')" style="background-color: orange; border: none;">*</button></th></tr>
+
+
+        <tr style="width: 200px; height: 20px;">
+        <th style="width: 50px;"><button id="4" value="4"  onclick="display('4')" style="background-color: grey; border: none;">4</button></th>
+        <th style="width: 50px;"><button id="5" value="5" onclick="display('5')" style="background-color: grey; border: none;">5</button></th>
+        <th style="width: 50px;"><button id="6" value="6" onclick="display('6')" style="background-color: grey; border: none;">6</button></th>
+        <th style="width: 50px; background-color: orange;"><button id="-" value="-" onclick="display('-')" style="background-color: orange; border: none;">-</button></th></tr>
+
+
+        <tr style="width: 200px; height: 20px;"><th style="width: 50px;"><button id="1" value="1"  onclick="display('1')" style="background-color: grey; border: none;">1</button></th>
+        <th style="width: 50px;"><button id="2" value="2" onclick="display('2')" style="background-color: grey; border: none;">2</button></th>
+        <th style="width: 50px;"><button id="3" value="3" onclick="display('3')" style="background-color: grey; border: none;">3</button></th>
+        <th style="width: 50px; background-color: orange;"><button id="+" value="+" onclick="display('+')" style="background-color: orange; border: none;">+</button></th></tr>
+
+
+        <tr style="width: 200px; height: 20px;"><th style="width: 50px;"><button id="0" value="0" onclick="display('0')" style="background-color: grey; border: none;">0</button></th>
+            <th style="width: 50px; background-color: darkred;"><button id="DEL" value="DEL" onclick="DEL()" style="background-color: darkred; border: none;">DEL</button></th>
+        <th style="width: 50px;"><button id="." value="." onclick="display('.')" style="background-color: grey; border: none;">.</button></th>
+        <th style="width: 50px; background-color: orange;"><button id="=" value="=" onclick="calculate()" style="background-color: orange; border: none;">=</button></th></tr>
+    </table></center>
+    <script>
+   function display(value){
+    
+    document.getElementById("result").value+=value;
+   }
+   function clrscreen(){
+    document.getElementById("result").value="";
+   }
+   function calculate(){
+    var a=document.getElementById("result").value;
+    var b=eval(a);
+    document.getElementById("result").value=b;
+   }
+   function DEL(){
+     let a=document.getElementById("result").value;
+     let text=a.toString();
+     let l=text.length;
+     let b=text.substr(0,l-1);
+     document.getElementById("result").value=b;
+
+   }
+    </script>
+</body>
+</html>
